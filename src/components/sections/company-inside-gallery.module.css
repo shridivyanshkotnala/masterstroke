@@ -1,0 +1,266 @@
+.header {
+  max-width: 48rem;
+}
+
+.kicker {
+  display: inline-flex;
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklch, var(--border) 76%, var(--brand) 24%);
+  background: color-mix(in oklch, var(--background) 94%, var(--brand) 6%);
+  padding: 0.3rem 0.7rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 650;
+  color: color-mix(in oklch, var(--foreground) 86%, var(--brand) 14%);
+}
+
+.title {
+  margin-top: 0.95rem;
+  font-family: var(--font-heading), var(--font-body), sans-serif;
+  font-size: clamp(1.85rem, 2.8vw, 2.6rem);
+  line-height: 1.12;
+  font-weight: 710;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+.intro {
+  margin-top: 0.95rem;
+  max-width: 46rem;
+  color: var(--muted-foreground);
+  line-height: 1.6;
+}
+
+.workflowReveal {
+  margin-top: 1rem;
+}
+
+.workflow {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.workflowStep {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.workflowLabel {
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklch, var(--border) 74%, var(--brand) 26%);
+  background: color-mix(in oklch, var(--background) 93%, var(--brand) 7%);
+  padding: 0.34rem 0.72rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 620;
+  color: color-mix(in oklch, var(--foreground) 80%, var(--brand) 20%);
+}
+
+.workflowConnector {
+  width: 2.2rem;
+  height: 1px;
+  background: linear-gradient(to right, color-mix(in oklch, var(--border) 60%, var(--brand) 40%), transparent);
+}
+
+.galleryGrid {
+  margin-top: 1.35rem;
+  width: min(100%, 70rem);
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  align-items: stretch;
+}
+
+.heroCard,
+.sideCard {
+  min-height: 18rem;
+}
+
+.heroCard {
+  min-height: clamp(27rem, 56vh, 36rem);
+}
+
+.sideStack {
+  display: grid;
+  gap: 1rem;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
+.sideCard {
+  min-height: clamp(13rem, 26vh, 17.5rem);
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.2rem;
+  border: 1px solid color-mix(in oklch, var(--border) 72%, var(--brand) 28%);
+  background: color-mix(in oklch, var(--surface) 92%, var(--brand) 8%);
+  box-shadow: 0 14px 30px oklch(0.14 0.01 255 / 0.18), inset 0 0 0 1px oklch(0.7 0.06 250 / 0.1);
+  height: 100%;
+  isolation: isolate;
+  transform: translate3d(0, 0, 0);
+  transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1), border-color 220ms ease, box-shadow 260ms ease;
+}
+
+.cardImage {
+  object-fit: cover;
+  transform: scale(1.01);
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1), filter 280ms ease;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(to top, oklch(0.18 0.01 255 / 0.78) 0%, oklch(0.18 0.01 255 / 0.38) 32%, transparent 68%),
+    linear-gradient(118deg, transparent 32%, oklch(0.96 0.01 250 / 0.14) 54%, transparent 72%);
+  z-index: 1;
+}
+
+.cardOverlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  padding: 0.9rem 0.95rem 1rem;
+  color: oklch(0.97 0 0);
+  transform: translate3d(0, 10px, 0);
+  transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.cardTitle {
+  font-size: 1rem;
+  line-height: 1.2;
+  font-weight: 670;
+  letter-spacing: 0.01em;
+}
+
+.cardDescription {
+  margin-top: 0.42rem;
+  font-size: 0.81rem;
+  line-height: 1.4;
+  color: oklch(0.95 0.002 255);
+  max-width: 34ch;
+}
+
+.card:hover,
+.card:focus-visible {
+  transform: translate3d(0, -4px, 0);
+  border-color: oklch(0.75 0.12 248 / 0.68);
+  box-shadow: 0 0 0 1px oklch(0.75 0.12 248 / 0.2), 0 18px 34px oklch(0.14 0.01 255 / 0.22), 0 0 20px oklch(0.76 0.11 248 / 0.26);
+}
+
+.card:hover .cardImage,
+.card:focus-visible .cardImage {
+  transform: scale(1.045);
+  filter: saturate(1.04);
+}
+
+.card:hover .cardOverlay,
+.card:focus-visible .cardOverlay {
+  transform: translate3d(0, 0, 0);
+}
+
+@media (max-width: 74rem) {
+  .galleryGrid {
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .heroCard {
+    grid-column: span 2;
+    min-height: clamp(24rem, 48vh, 30rem);
+  }
+
+  .sideStack {
+    grid-column: span 2;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: none;
+  }
+
+  .sideCard {
+    min-height: clamp(14rem, 28vh, 18rem);
+  }
+}
+
+@media (max-width: 63.99rem) {
+  .workflow {
+    flex-wrap: wrap;
+    gap: 0.55rem;
+  }
+
+  .workflowStep {
+    gap: 0.55rem;
+  }
+
+  .workflowConnector {
+    width: 1.4rem;
+  }
+}
+
+@media (max-width: 48rem) {
+  .galleryGrid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.8rem;
+  }
+
+  .heroCard,
+  .sideStack,
+  .sideCard {
+    grid-column: auto;
+    min-height: clamp(14.5rem, 42vh, 20rem);
+  }
+
+  .sideStack {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.8rem;
+  }
+
+  .cardOverlay {
+    padding: 0.78rem 0.8rem 0.86rem;
+  }
+
+  .cardTitle {
+    font-size: 0.94rem;
+  }
+
+  .cardDescription {
+    font-size: 0.76rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .cardImage,
+  .cardOverlay {
+    transition: none;
+  }
+
+  .card:hover,
+  .card:focus-visible {
+    transform: none;
+  }
+
+  .card:hover .cardImage,
+  .card:focus-visible .cardImage {
+    transform: none;
+    filter: none;
+  }
+
+  .card:hover .cardOverlay,
+  .card:focus-visible .cardOverlay {
+    transform: none;
+  }
+}

@@ -1,0 +1,11 @@
+<svg width="340" height="116" viewBox="0 0 340 116" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">SOC 2 Type II certification mark</title>
+  <desc id="desc">SOC 2 Type II security and confidentiality controls mark</desc>
+  <rect x="0.75" y="0.75" width="338.5" height="114.5" rx="16" fill="#FFFFFF"/>
+  <rect x="0.75" y="0.75" width="338.5" height="114.5" rx="16" stroke="#E5E7EB" stroke-width="1.5"/>
+  <rect x="25" y="28" width="70" height="58" rx="12" fill="#1D4ED8"/>
+  <text x="60" y="58" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="800" fill="#FFFFFF">SOC 2</text>
+  <text x="60" y="75" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#DBEAFE">TYPE II</text>
+  <text x="106" y="51" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#0F172A">SOC 2</text>
+  <text x="106" y="74" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600" fill="#475569">Security, Availability and Confidentiality</text>
+</svg>
